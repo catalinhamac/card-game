@@ -74,8 +74,6 @@ export const Players = ({ id }: IProps) => {
   };
 
   const compare = () => {
-    const player1Value = drawnCards[0].value;
-    const player2Value = drawnCards[1].value;
     const cardsCode = `${drawnCards[0].code},${drawnCards[1].code}`;
 
     if (player1Value > player2Value) {
@@ -93,9 +91,6 @@ export const Players = ({ id }: IProps) => {
   };
 
   const handleReshuffle = () => {
-    const player1Value = drawnCards[0].value;
-    const player2Value = drawnCards[1].value;
-
     if (player1Value === player2Value) {
       lookupReshuffleCards(id as string);
       return setDrawnCards([]);
@@ -110,7 +105,6 @@ export const Players = ({ id }: IProps) => {
     return <p>Player 2 won!</p>;
   };
 
-  console.log("kkk");
   if (!!noRemaining) {
     return getWinner();
   }
