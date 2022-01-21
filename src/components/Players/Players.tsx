@@ -20,7 +20,9 @@ const Ul = styled.ul`
 `;
 
 export const Players = ({ id }: IProps) => {
-  const { data: drawCard, refetch } = useDrawCard(id as string);
+  const { data: drawCard, refetch: refetchDrawCard } = useDrawCard(
+    id as string
+  );
   const [statusText, setStatusText] = useState("");
   const { servicesFactory } = useDeps() as IState;
   const { lookupAddToPile, lookupReshuffleCards, lookupListingCardsInPiles } =
@@ -65,7 +67,7 @@ export const Players = ({ id }: IProps) => {
 
   const handleDrawCard = () => {
     setStatusText("");
-    refetch();
+    refetchDrawCard();
   };
 
   const handleCompareCards = () => {
