@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+
 import { IState, useDeps } from "../../context/DepsContext";
 import { ICard, IdrawCard, IPilesListing } from "../../services/types";
-
 import { Player } from "../Player/Player";
 import { useDrawCard } from "../useDrawCard";
 
